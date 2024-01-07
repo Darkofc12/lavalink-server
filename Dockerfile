@@ -9,10 +9,10 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
 
-COPY package.json .
+COPY application.yml .
 
 RUN yarn install
 
 COPY . .
 
-CMD ["node", "index.js"]
+CMD ["bash", "start.sh"]
